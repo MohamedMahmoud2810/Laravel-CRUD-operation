@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/posts', [PostController::class, 'index'])-> name('posts.index');
+Route::get('/posts', [PostController::class, 'index'])-> name('posts.index')->middleware(middleware:'auth');
 
 Route::get('/posts/create' ,[PostController::class, 'create'] ) -> name('posts.create')->middleware(middleware:'auth');
 
